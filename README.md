@@ -8,6 +8,7 @@
 7. Đức Nguyễn . 97 . sydney . robot mechanic. service engineer. distributor máy móc . học để upskill
 8. Vương Trần . 2000. computer science . machine learning AI . kiêm job software. hoi ve equal + hashmap
 9. Thy . 2000 . data analyst engineer . improve skill coding
+9. Khanh Do.
 
 ## Roll Call
 | stt | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Name |
@@ -15,11 +16,39 @@
 |1|   |   |   |   |   |   |   |   |   |   |   |   |Dung Nguyen   |
 |2|   |   |   |   |   |   |   |   |   |   |   |   |Thu Trang |
 |3| x |   |   |   |   |   |   |   |   |   |   |   |Quang |
-|4| x |   |   |   |   |   |   |   |   |   |   |   |Thủy  |
+|4| x | x |   |   |   |   |   |   |   |   |   |   |Thủy  |
 |5|   |   |   |   |   |   |   |   |   |   |   |   |Đức   |
 |6| x |   |   |   |   |   |   |   |   |   |   |   |Vân   |
 |7| x |   |   |   |   |   |   |   |   |   |   |   |Đức Nguyễn|
-|8|   |   |   |   |   |   |   |   |   |   |   |   |Vương Trần|
+|8|   |  |   |   |   |   |   |   |   |   |   |   |Vương Trần|
 |9| x |   |   |   |   |   |   |   |   |   |   |   |Thy   |
+|10|  | x |   |   |   |   |   |   |   |   |   |   |Khanh   |
+
+## Yellow Cards:
 
 ## Links and resources
+|Thu Trang |x
+|Quang |x
+|Thủy  |
+|Đức   |x
+|Vân   |x
+|Đức Nguyễn|x
+|Vương Trần|x
+|Thy   |
+|Khanh   |
+
+## Tools
+- VsCode
+- Extension: Live share
+- NodeJS (>18)
+
+
+## Syllabus
+
+[ ] Day 2: HTML basic, CSS Basic
+[ ] Day 3: CSS (flex,grid, position,...) - Reponsive
+[ ] Day 4: JS Foundation, JS DOM
+[ ] Day 5: ReactJS
+ 
+Strictly type language
+Weakly type language
