@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated title</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- yellow in css file -->
+
+    <!-- 
+    ** 3 ways to use the css:
+            - <link/>: External stylesheet
+            - <style>: Internal Stylesheet
+            - style Inline style (css selector)
+    ** Nen de style o trong head 
+    ** Do uu tien
+        - Do uu tien giua internal/extenal css bang nhau
+                - thang nao xuat hien sau (declare after) thi thang do duoc uu tien hon
+        - Do uu tien cua inline style la cao nhat 
+    ** How to calculate the "Do uu tien"
+        - 
+    -->
+
+    <!-- css selector:
+        Declare after: 0.5points
+        tag/element selector: 1 point
+        class: 10 points
+        id: 100 points
+        inline: 1000 points
+        !important: 99999999 pointsx
+ 
+        selector combination
+       id selector > class selector > tag selector
+
+    -->
+</head>
+
+<body>
+    <style>
+        /* #special {
+            color: green;
+        }
+
+        .the-chosen-one {
+            color: red
+        }
+
+        .the-chosen-one~p {
+            color: yellow
+        }
+
+        div>.the-chosen-one+p:not(h1) {
+            color: yellow
+        } */
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            animation: spinAndChange 5s linear 0s infinite alternate;
+        }
+
+
+
+        @keyframes spinAndChange {
+            0% {
+                background: lightblue;
+                transform: rotate(0deg);
+            }
+
+            100% {
+                background: lightcoral;
+                transform: rotate(180deg);
+
+            }
+        }
+
+        /* HTML,CSS,JS */
+    </style>
+
+    <style>
+        p::before {
+            content: "OK";
+            color: red;
+        }
+
+        p::after {
+            content: " end";
+            color: blue;
+        }
+    </style>
+
+
+    <p class="example another">Lorem ipsum dolor sit amet.</p>
+    <!-- <p class="example ">Lorem ipsum dolor sit amet.</p> -->
+    <!-- 
+            
+    
+    <style
+      /* AND */
+        .example.another {
+            color: purple
+        }
+
+        /* OR */
+        .example,
+        .another {
+            color: yellow
+        }
+        
+        INSIDE
+        selectorA selectorB {
+
+        }
+
+        Children
+
+        selectorA>selectorB {
+
+        }
+
+        Siblings
+        .the-chosen-one~p {
+        color: yellow
+        }
+        
+        Next sibling only
+        .the-chosen-one+p {
+        color: yellow
+        }
+         -->
+</body>
+
+</html>
+
+<!-- 
+- Nhung the bat buoc trong HTML
+- khi su dung the, nen check document ve cac thuoc tinh cua html
+- Co gang apply semantic html cang nhieu cang tot (blockscope/ pre/ nav/header/footer/section/main/article)
+
+ul li
+ol li
+p
+h1->h6
+img/video/audio
+a
+
+
+
+
+[x] Absolute/relative path
+[x] js/css animation
+[ ] pseudo-class/element:nth-child()
+----JS----
+[ ] DOM/ CSSOM
+-->
