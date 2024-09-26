@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        .flex {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            height: 500px;
+            /* viewport height */
+            /* viewport width */
+            flex-wrap: wrap;
+        }
+
+        .flex>div {
+            background: lightblue;
+            border: 1px solid white;
+            height: 50px;
+        }
+
+        /* Navbar desktop css */
+        nav {}
+
+        /* Navbar desktop css */
+        @media screen and (max-width: 768px) {
+
+            /* Navbar mobile css */
+            nav {}
+
+            /* Navbar mobile css */
+
+        }
+    </style>
+    <!-- 
+        CSS FLEX:
+            Flex container:
+                - display:flex
+                - flex-direction: row 
+                - justify-content: follow the direction (row => X/ Column => Y)
+                - align-items: row:Y
+                - gap: 
+            Flex items:   
+                - percentage / shrink 
+
+
+        Pefect center
+
+        /* viewport height = vh*/
+        /* viewport width  = vw*/
+    
+
+        Exercise:
+        - Step 1: build desktop navbar with flex box
+        - Step 2: write a css on mobile view, show the toggle icon (display:block/none)
+        - Step 3: change the navbar menu items to vertical by change the flex-direction
+        - Step 4: the menu items only show when hover to hamburger
+    -->
+    <style>
+        .toggle-icon {
+            display: none;
+            max-width: 20px;
+            padding: 10px;
+
+        }
+
+        nav {
+            background: lightblue;
+
+        }
+
+        ul {
+            display: flex;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        li {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+
+        /* // reponsive 
+            + mobile first
+            + desktop first
+        
+        */
+
+        /* breakpoints
+            375 768 1200 1600 1920 resolution
+        
+        */
+
+
+        /*  Desktop first - max-width
+        - no media: Desktop
+        - Ipad: 768px
+        - mobile: 375px
+        
+        Mobile first: - min-width
+        - no media: mobile
+        - ipad: 768
+        - desktop: 1600
+        */
+        @media screen and (max-width: 768px) {
+
+            /* Navbar mobile css */
+            .toggle-icon {
+                display: block;
+                padding: 5px;
+                max-width: 35px;
+            }
+
+            ul {
+                max-height: 0px;
+                overflow: hidden;
+                transition: 0.5s;
+                flex-direction: column;
+
+
+            }
+
+            nav:hover ul {
+                display: flex;
+                max-height: 100vh;
+            }
+
+            nav {
+                background: lightblue;
+            }
+
+            /* Navbar mobile css */
+
+
+        }
+
+        @media screen and (max-width: 375px) {
+
+            nav {
+                background: lightpink;
+            }
+
+        }
+
+        /* 17:55 */
+    </style>
+    <nav>
+        <div class="toggle-icon">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 283.426 283.426" xml:space="preserve">
+                <g>
+                    <rect x="0" y="40.84" style="fill:#010002;" width="283.426" height="47.735" />
+                    <rect x="0" y="117.282" style="fill:#010002;" width="283.426" height="47.735" />
+                    <rect x="0" y="194.851" style="fill:#010002;" width="283.426" height="47.735" />
+                </g>
+            </svg>
+        </div>
+        <ul>
+
+            <li>Lorem.</li>
+            <li>Temporibus.</li>
+            <li>Repellendus!</li>
+            <li>Nisi?</li>
+            <li>Dolorem?</li>
+        </ul>
+    </nav>
+
+    <!-- 
+        box-sizing:content-box;
+
+
+        inside a flex container > flex container
+     -->
+
+</body>
+
+</html>
