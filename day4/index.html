@@ -42,10 +42,110 @@
             console.log(index)
         }
 
+        function sleep() {
+            console.log("SLEEP")
+        }
+
+        const token = "response";
+        const user = {}
+
+        const userProfile = {
+            token,
+            user
+        }
+
+
+
+        const object = {
+            name: 'Patrick',
+            wake_up: function () {
+                console.log("WAKE UP!")
+            },
+            sleep,
+        }
+
+        // ES6 - Destructuring
+        // function logUserInfo({ name, age }) {
+        //     console.log(name, age)
+        // }
+
+        // const name = object.name;
+        const { name } = object;
+
+
+        // const userName = object.name;
+        const { name: userName } = object;
+
+
+        // if(object.name){
+        //     object.name = "chuoi"
+        // }
+
+        if (name) {
+            name = "chuoi"
+        }
+
+        // const [first, , thrid] = arr
+
+
+
+        // Rest operator, spread operator (...)
+
+        // rest operator:
+        //      const newObj2 = {
+        //          lastName: 'le',
+        //          ...phuc,
+        //          age: 20
+        //      }
+
+        // Spread operator
+        // function abc(){
+        //     return
+        // }
+        // const xyz = function(){
+        //     return
+        // }
+
+        // const xyz = () => {}
+
+        // const xyz = onlyOneParame => { }
+
+        // const xyz = onlyOneParameter => onlyOneParameter > 0
+
+        // const checkNum = number => number > 0 ? "pos" : "neg"
+
+
+        // Exercise 1: Write an arrow function to calculate the area of a rectangle. [17:17]
+
+        // function rectangleAreaCalc(l,w){
+        //     this
+        //     return l*w
+        // }
+
+        // const calcRectArea = (l,w) => l*w
+
+
+        function Person() {
+            this.age = 0;
+            this.method = function () {
+
+            }
+            setInterval(() => {
+                this.age++;
+                console.log(this.age)
+            }, 1000)
+        }
+
+        const p = new Person("Phuc");
+
+        // [17:43]
+
 
     </script>
 
 
 </body>
+
+const { name } = object;
 
 </html>
