@@ -1,4 +1,4 @@
-import CommonContainer from '../CommonContainer';
+import CommonContainer from '../CommonComponents';
 import StarIcon from '../StarIcon'
 import productItemStyle from './Product.module.css'
 
@@ -11,7 +11,10 @@ function ProductItem(props) {
         star.push(<StarIcon />)
     }
 
-
+    // Todolist app:
+    // Todo > Input Component
+    //      > ListTodo > Todo (const todos = [{title:'abc', isDone: true/false, createdAt: time}])
+    //                 > Depends on 'status', style the TOdo
     console.log('productItemStyle', productItemStyle)
     return <div className={productItemStyle['product-item']}>
         <h3>{props.title}</h3>
