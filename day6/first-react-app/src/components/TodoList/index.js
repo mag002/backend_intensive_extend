@@ -3,13 +3,13 @@ import { CommonButton, CommonContainer, CommonInput, TodoContainer } from "../Co
 import ListContainer from "../ListContainer";
 import InputContainer from "../InputContainer";
 
-function TodoList() {
+function TodoList({ setIsLoggedIn }) {
     // state / props
     // hook - use<Something>
     const [darkMode, setDarkMode] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const [todos, setTodos] = useState([])
-
+    // filter
     const handleDarkMode = () => {
         setDarkMode(!darkMode)
     }
@@ -28,11 +28,40 @@ function TodoList() {
             setInputValue('')
         }
     }
+    const handleLogout = () => {
+        setIsLoggedIn(false)
+    }
+
+    // BT1: 
+    const handleDelete = (id) => {
+        const newTodos = [...todos].filter(todo => todo.id !== id);
+        setTodos(newTodos)
+    }
+    // [16:21 | 20:21]
+    // BT2: array.find / array.findIndex
+    const handleUpdate = (id) => {
+        const newTodos = [...todos];
+        const itemIndex = newTodos.findIndex((todo) => {
+            return todo.id === id
+        })
+        newTodos[itemIndex].isDone = !newTodos[itemIndex].isDone;
+        setTodos(newTodos)
+        // user todo id to find the element in array
+        // update that element
+        // update the state again
+    }
+
     // Re-render component
     return <CommonContainer darkTheme={darkMode}>
-        <CommonButton style={{ position: 'fixed', top: 10, right: 10 }} onClick={handleDarkMode}>
-            {darkMode ? 'Light mode' : 'Dark mode'}
-        </CommonButton>
+        <div style={{ position: 'fixed', top: 10, right: 10, display: 'flex', gap: '10px' }}>
+            <CommonButton onClick={handleDarkMode}>
+                {darkMode ? 'Light mode' : 'Dark mode'}
+            </CommonButton>
+            <CommonButton onClick={handleLogout}>
+                Logout
+            </CommonButton>
+        </div>
+
         <TodoContainer>
 
             {/* 2 ways binding */}
@@ -46,7 +75,7 @@ function TodoList() {
                 the task title will be the user input
                 // Requirement 2: clear the input after todo added
             */}
-            <ListContainer todos={todos} />
+            <ListContainer handleUpdate={handleUpdate} handleDelete={handleDelete} todos={todos} />
         </TodoContainer>
     </CommonContainer>
 }
