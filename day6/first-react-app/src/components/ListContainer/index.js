@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { CommonInput } from '../CommonComponents';
 import { useState } from 'react';
+import TodoItem from '../TodoItem';
 
 const Container = styled.ul`
     padding:0px;
@@ -56,34 +57,59 @@ function ListContainer(props) {
             })
             .sort((a, b) => (a.isDone == b.isDone) ? b.id - a.id : a.isDone - b.isDone)
             .map(item => {
-                return <li key={item.id}>
-                    <input type="checkbox" checked={item.isDone} onClick={() => props.handleUpdate(item.id)} />
-                    <p style={{ textDecoration: item.isDone ? 'line-through' : 'initial' }}>{item.title}</p>
-                    <button onClick={() => props.handleDelete(item.id)}>Delete</button>
-                </li>
+                return <TodoItem item={item} handleDelete={props.handleDelete} handleUpdate={props.handleUpdate} />
             })}
     </Container>
 }
 
 export default ListContainer
 
+// NavigationBar (Home/Cart/Order | User)
+// ProducstList (Grid component | 1 dong` co 4 san pham)
+//  - Container  
+//     -Sidebar 
+//     - ProductContainer
+//         - Product
 
-// COMING UP NEXT
+
+
+// | create new folder
+// https://vite.dev/guide/ 
+// Run npm create vite@latest
+// - shopping-cart
+// - enter
+// - Vanilla/Vue/React()
+// - Typescript [ ]
+// Enter
+// npm i
+// npm i @emotion/react @emotion/styled @mui/styled-engine-sc styled-components
+// npm i @mui/material
+
+// npm run dev
+
+// https://prod.liveshare.vsengsaas.visualstudio.com/join?0DE3F745933299552F48FE5C1E50EE91E732
+
+// https://mui.com/material-ui/getting-started/
+
+// 16:45 | 20:45
+
+//  NEXT
 /**
- * 
-vite
+ * Components / [props]
+vite [x]
 
-JS / TS
+JS / TS [x]
 
-Material UI
+Material UI [x]
 
-react-router
+life-cycle components / api call [x]
 
-life-cycle components / api call
+react-router [x]
 
-global state management
+global state management [useReducer/useContext]
 
 performance 
 
 unit test
 */
+

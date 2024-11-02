@@ -11,10 +11,16 @@ function App() {
   // Prestation component / Smart component (Container)
 
   // use map to render the ProductItem
+
+  // 10 pages => 10 url
+
+  // get url param window.location => pathName
+  // switch(url/param)=> case 
+  // SPA: a href
   return (
     <div className="App">
       {/* Conditional(isLoggedIn) rendering */}
-      {isLoggedIn ? <TodoList setIsLoggedIn={setIsLoggedIn} /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+      {true ? <TodoList setIsLoggedIn={setIsLoggedIn} /> : <Login setIsLoggedIn={setIsLoggedIn} />}
     </div>
   );
 }
