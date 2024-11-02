@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 type ProductProps = {
     id: number,
@@ -30,7 +31,9 @@ export default function Product({ id, thumbnail, title, price }: ProductProps) {
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={() => console.log("PRODUCT_ID", id)}>Add To Cart</Button>
-                <Button size="small">Details</Button>
+                <Button size="small"><Link to={`/product/${id}`}>
+                    Details
+                </Link></Button>
             </CardActions>
         </Card>
     );
@@ -40,4 +43,3 @@ export default function Product({ id, thumbnail, title, price }: ProductProps) {
 
 // ProductList
 // ProductDetail
-
