@@ -11,9 +11,13 @@ type ProductProps = {
     thumbnail: string,
     title: string,
     price: number,
+    stock: number
 }
 
-export default function Product({ id, thumbnail, title, price }: ProductProps) {
+export default function Product({ id, thumbnail, title, price, stock }: ProductProps) {
+
+    const { addToCart } = useContext(CartContext);
+
     return (
         <Card sx={{ height: "100%" }}>
             <CardMedia
