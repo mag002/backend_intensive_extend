@@ -6,9 +6,8 @@ import {
     Grid,
     Input,
 } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CartContext } from '../../context/cartContext';
 
 
 
@@ -17,7 +16,6 @@ function ProductDetailPage() {
     const [product, setProduct] = useState<any>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
-    const { addToCart } = useContext(CartContext)
     const fetchProducts = async () => {
         const res = await fetch('https://dummyjson.com/products/' + params.productId);
         const data = await res.json();
@@ -30,11 +28,7 @@ function ProductDetailPage() {
     if (isLoading) {
         return <CircularProgress />
     }
-    const handleAddToCart = () => {
-        const { id, title, thumbnail, price, stock } = product;
-        addToCart({ item: { id, title, thumbnail, price, stock }, quantity })
-    }
-
+    console.log(params)
     return <Container>
         <Grid mt={2} container columnSpacing={2}>
             <Grid item xs={6}>
@@ -62,7 +56,7 @@ function ProductDetailPage() {
                 <Box mt={1} display="flex">
                     {/* Dispatch Action:  */}
                     {/* <Button variant="contained" onClick={() => addItem({ id: product.id, title: product.title, quantity, thumbnail: product.thumbnail })}>Add to cart</Button> */}
-                    <Button variant="contained" onClick={handleAddToCart}>Add to cart</Button>
+                    <Button variant="contained" onClick={() => { }}>Add to cart</Button>
                 </Box>
             </Grid>
         </Grid>

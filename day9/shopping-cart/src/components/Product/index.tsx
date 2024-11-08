@@ -4,8 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useContext } from 'react';
-import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 
 type ProductProps = {
@@ -36,10 +34,11 @@ export default function Product({ id, thumbnail, title, price, stock }: ProductP
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" onClick={() => addToCart({ item: { id, title, thumbnail, price, stock }, quantity: 1 })}>Add To Cart</Button>
+                <Button size="small" onClick={() => console.log("PRODUCT_ID", id)}>Add To Cart</Button>
                 <Button size="small"><Link to={`/product/${id}`}>
                     Details
-                </Link></Button>            </CardActions>
+                </Link></Button>
+            </CardActions>
         </Card>
     );
 }
@@ -48,4 +47,3 @@ export default function Product({ id, thumbnail, title, price, stock }: ProductP
 
 // ProductList
 // ProductDetail
-

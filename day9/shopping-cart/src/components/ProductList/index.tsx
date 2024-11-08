@@ -1,73 +1,45 @@
-import { Box, Container, Grid2 } from "@mui/material"
-import ProductContainer from "../ProductContainer"
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import ProductContainerSkeleton from "../ProductContainerSkeleton";
-import ErrorMessage from "../ErrorMessage";
-function ProductList(): JSX.Element {
-    const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false);
-    const [number, setNumber] = useState(0)
-    const [toggle, setToggle] = useState(false)
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
-    //  BTVN1: Build a pagination for this page
-    //  use query param for pagination
-
-    // BTVN2: Complete ProductDetails page with axios, useEffect
-
-    // BTVN3: Create Cart page, add cart component to navbar
-
-    // BTVN4: Research about global state management 
-
-    const getProductData = async () => {
-        setIsError(false)
-        setIsLoading(true)
-        try {
-            const res = await axios.get('https://dummyjson.com/products');
-            setIsLoading(false)
-            setProducts(res.data.products)
-            console.log(res)
-        } catch (e) {
-            setIsError(true);
-            setIsLoading(false);
-        }
-    }
-
-    useEffect(() => {
-        getProductData();
-    }, [])
-    // Chay lan dau luc component vua duoc render (mount)
-    // Chi chay 1 lan
-    const logNumber = () => {
-        console.log(number)
-    }
-    useEffect(() => {
-        logNumber()
-    }, [toggle])
-
-
-
-    return <Container maxWidth={false}>
-
-        <button onClick={() => setToggle(!toggle)}>
-            Update another state
-        </button>
-        <button onClick={() => setNumber(number + 1)}>
-            Increase
-        </button>
-        <Box mt={2}>
-            <Grid2 container spacing={2}>
-                {/* // SIdebar */}
-                <Grid2 size={{ xs: 12, md: 4 }}>
-                    ok
-                </Grid2>
-                {
-                    isError ? <ErrorMessage handleRetry={getProductData} /> :
-                        isLoading ? <ProductContainerSkeleton /> : <ProductContainer products={products} />}
-            </Grid2>
-        </Box>
-    </Container>
+type ProductProps = {
+    id: number,
+    thumbnail: string,
+    title: string,
+    price: number,
 }
-// 16:31 | 20:31
-export default ProductList
+
+export default function Product({ id, thumbnail, title, price }: ProductProps) {
+    return (
+        <Card sx={{ height: "100%" }}>
+            <CardMedia
+                sx={{ height: 140, minHeight: 200 }}
+                image={thumbnail}
+                title={title}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h6" component="div">
+                    {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Price: {price}$
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small" onClick={() => console.log("PRODUCT_ID", id)}>Add To Cart</Button>
+                <Button size="small"><Link to={`/product/${id}`}>
+                    Details
+                </Link></Button>
+            </CardActions>
+        </Card>
+    );
+}
+
+// 17:18 | 21:18
+
+// ProductList
+// ProductDetail
