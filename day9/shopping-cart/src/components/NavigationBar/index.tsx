@@ -12,8 +12,22 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
 
-const pages = ['Products', 'Cart', 'Order'];
+const pages = [
+    {
+        label: 'Products',
+        route: 'product'
+    },
+    {
+        label: 'Cart',
+        route: 'cart'
+    },
+    {
+        label: 'Order',
+        route: 'order'
+    }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavigationBar() {
@@ -86,8 +100,10 @@ function NavigationBar() {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                                    <Link to={page.route}>
+                                        <Typography sx={{ textAlign: 'center' }}>{page.label}</Typography>
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -114,11 +130,13 @@ function NavigationBar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.label}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                <Link to={page.route}>
+                                    {page.label}
+                                </Link>
                             </Button>
                         ))}
                     </Box>

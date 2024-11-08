@@ -8,6 +8,7 @@ type Product = {
     thumbnail: string,
     title: string,
     price: number,
+    stock: number
 }
 // HOMEWORK 1: 
 // Research the different between type/interface
@@ -21,9 +22,9 @@ type Product = {
 // }
 function ProductContainer({ products }: ProductContainerProps) {
     return <Grid2 size={{ xs: 12, md: 8 }} container spacing={2}>
-        {products.map(({ title, id, thumbnail, price }) => {
+        {products.map(({ title, id, thumbnail, price, stock }) => {
             return <Grid2 size={{ xs: 12, md: 4 }}>
-                <Product id={id} title={title} thumbnail={thumbnail} price={price} />
+                <Product id={id} title={title} thumbnail={thumbnail} price={price} stock={stock} />
             </Grid2>
         })}
         {/* <Grid2 size={3}>
